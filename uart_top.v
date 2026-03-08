@@ -7,7 +7,7 @@ module uart_top
                     FIFO_EXP = 2        // exponent for number of FIFO addresses (2^2 = 4)
     )
     (
-        input clk_100MHz,               // FPGA clock
+        input clk_50MHz,               // FPGA clock
         input reset,                    // reset
         input read_uart,                // button
         input write_uart,               // button
@@ -36,7 +36,7 @@ module uart_top
          ) 
         BAUD_RATE_GEN   
         (
-            .clk_100MHz(clk_100MHz), 
+            .clk_50MHz(clk_50MHz), 
             .reset(reset),
             .tick(tick)
          );
@@ -48,7 +48,7 @@ module uart_top
          )
          UART_RX_UNIT
          (
-            .clk_100MHz(clk_100MHz),
+            .clk_50MHz(clk_50MHz),
             .reset(reset),
             .rx(rx),
             .sample_tick(tick),
@@ -63,7 +63,7 @@ module uart_top
          )
          UART_TX_UNIT
          (
-            .clk_100MHz(clk_100MHz),
+            .clk_50MHz(clk_50MHz),
             .reset(reset),
             .tx_start(tx_fifo_not_empty),
             .sample_tick(tick),
@@ -79,7 +79,7 @@ module uart_top
          )
          FIFO_RX_UNIT
          (
-            .clk(clk_100MHz),
+            .clk(clk_50MHz),
             .reset(reset),
             .write_to_fifo(rx_done_tick),
 	        .read_from_fifo(read_uart),
