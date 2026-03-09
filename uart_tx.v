@@ -27,7 +27,7 @@ module uart_transmitter
     reg tx_reg, tx_next;                    // data filter for potential glitches
     
     // Register Logic
-    always @(posedge clk_100MHz, posedge reset)
+    always @(posedge clk_50MHz, posedge reset)
         if(reset) begin
             state <= idle;
             tick_reg <= 0;

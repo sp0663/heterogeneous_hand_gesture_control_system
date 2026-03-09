@@ -1,6 +1,6 @@
 module uart_rx 
 #( parameter DBITS = 8,
-             SB_TICK= 16
+             SB_TICK= 16 //stop bit
 )
 (input clk_50MHz,
  input reset,
@@ -16,8 +16,13 @@ localparam [1:0] idle = 2'b00,
                  stop = 2'b11;
 reg [1:0] state,next_state;
 reg [3:0] tick_reg, tick_next;
-reg [2:0] nbits_reg, nbits _next;
+reg [2:0] nbits_reg, nbits_next;
 reg [7:0] data_reg ,data_next;
+reg rx_sync_1, rx_sync_2;
+always @(posedge clk_50MHz) begin
+    rx_sync_1 <= rx;
+    rx_sync_2 <= rx_sync_1; // Use rx_sync_2 in your FSM instead of rx
+end
 //Register Logic
 always @(posedge clk_50MHz, posedge reset) begin
     if (reset) begin
@@ -43,7 +48,7 @@ always@(*) begin
 
     case(state)
         idle:begin
-            if(~rx) begin
+            if(~rx_sync_2) begin
                 next_state= start;
                 tick_next= 0;
             end
@@ -53,18 +58,19 @@ always@(*) begin
                 if(tick_reg==7) begin
                     next_state=data;
                     tick_next=0;
-                    nbits_next=0
+                    nbits_next=0;
+                end
+                else begin
+                    tick_next=tick_reg + 1;
                 end
             end
-            else begin
-                tick_next=tick_reg + 1;
-            end
         end
+
         data: begin
             if(sample_tick) begin
                 if(tick_reg==15) begin
                     tick_next=0;
-                    data_next=(rx,data_reg[7:1]);
+                    data_next={rx_sync_2,data_reg[7:1]};
                     if(nbits_reg== (DBITS-1))
                         next_state=stop;
                     else 
@@ -79,9 +85,9 @@ always@(*) begin
                     next_state=idle;
                     data_ready=1'b1;
                 end
+                else 
+                    tick_next=tick_reg+1;
             end
-            else 
-                tick_next=tick_reg+1;
         end
     endcase
 end

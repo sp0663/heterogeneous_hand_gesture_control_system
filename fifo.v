@@ -60,11 +60,11 @@ module fifo
 		full_buff  = fifo_full;
 		empty_buff = fifo_empty;
 		
-		// Button press logic
-		case({write_to_fifo, read_from_fifo})     // check both buttons
-			// 2'b00: neither buttons pressed, do nothing
+		
+		case({write_to_fifo, read_from_fifo})     
 			
-			2'b01:	// read button pressed?
+			
+			2'b01:	
 				if(~fifo_empty) begin   // FIFO not empty
 					current_read_addr_buff = next_read_addr;
 					full_buff = 1'b0;   // after read, FIFO not full anymore
