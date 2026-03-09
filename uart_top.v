@@ -2,8 +2,8 @@ module uart_top
     #(
         parameter   DBITS = 8,          // number of data bits in a word
                     SB_TICK = 16,       // number of stop bit / oversampling ticks
-                    BR_LIMIT = 651,     // baud rate generator counter limit
-                    BR_BITS = 10,       // number of baud rate generator counter bits
+                    BR_LIMIT = 27,     // baud rate generator counter limit
+                    BR_BITS = 5,       // number of baud rate generator counter bits
                     FIFO_EXP = 2        // exponent for number of FIFO addresses (2^2 = 4)
     )
     (
