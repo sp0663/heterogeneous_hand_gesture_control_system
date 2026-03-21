@@ -157,8 +157,3 @@ Neural network inference for landmark detection is GPU-friendly and changes freq
 **Why rule-based classification on the FPGA?**
 A rule-based approach avoids the cost of implementing a neural network inference engine in RTL. Geometric rules over hand landmark positions are surprisingly effective for a well-defined gesture vocabulary, and they run in a deterministic number of clock cycles.
 
----
-
-## License
-
-This project is open source. See [LICENSE](LICENSE) for details.
