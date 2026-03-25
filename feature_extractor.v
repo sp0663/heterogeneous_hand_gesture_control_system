@@ -11,11 +11,11 @@ module feature_extractor (
     output [32:0] dist_thumb_index,
     output [32:0] dist_wrist_middle,
 
-    output [31:0] thumb_angle,
-    output [31:0] index_angle,
-    output [31:0] middle_angle,
-    output [31:0] ring_angle,
-    output [31:0] pinky_angle,
+    output thumb_extended,
+    output index_extended,
+    output middle_extended,
+    output ring_extended,
+    output pinky_extended,
     
     output thumb_angle_valid,
     output index_angle_valid,
@@ -52,7 +52,7 @@ module feature_extractor (
         .y2(y[3 * 16 +: 16]),
         .x3(x[4 * 16 +: 16]),
         .y3(y[4 * 16 +: 16]),
-        .angle(thumb_angle),
+        .finger_extended(thumb_extended),
         .valid_out(thumb_angle_valid)
     );
 
@@ -66,7 +66,7 @@ module feature_extractor (
         .y2(y[6 * 16 +: 16]),
         .x3(x[7 * 16 +: 16]),
         .y3(y[7 * 16 +: 16]),
-        .angle(index_angle),
+        .finger_extended(index_extended),
         .valid_out(index_angle_valid)
     );
 
@@ -80,7 +80,7 @@ module feature_extractor (
         .y2(y[10 * 16 +: 16]),
         .x3(x[11 * 16 +: 16]),
         .y3(y[11 * 16 +: 16]),
-        .angle(middle_angle),
+        .finger_extended(middle_extended),
         .valid_out(middle_angle_valid)
     );
 
@@ -94,7 +94,7 @@ module feature_extractor (
         .y2(y[14 * 16 +: 16]),
         .x3(x[15 * 16 +: 16]),
         .y3(y[15 * 16 +: 16]),
-        .angle(ring_angle),
+        .finger_extended(ring_extended),
         .valid_out(ring_angle_valid)
     );
 
@@ -108,7 +108,7 @@ module feature_extractor (
         .y2(y[18 * 16 +: 16]),
         .x3(x[19 * 16 +: 16]),
         .y3(y[19 * 16 +: 16]),
-        .angle(pinky_angle),
+        .finger_extended(pinky_extended),
         .valid_out(pinky_angle_valid)
     );
 

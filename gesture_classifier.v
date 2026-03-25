@@ -13,16 +13,16 @@ module gesture_classifier (
     output reg valid_out
 );
     localparam PINCH = 3'b000, FIST = 3'b001, OPEN_HAND = 3'b010, INDEX_FINGER = 3'b011, UNKNOWN = 3'b100;
-    localparam ANGLE_THRESHOLD = 32'd183016; // 160 degrees in fixed-point representation (Q16.16)
+    localparam ANGLE_THRESHOLD = 32'd182910; // 160 degrees in fixed-point representation (Q16.16)
 
     wire [32:0] dist_thumb_index;
     wire [32:0] dist_wrist_middle;
 
-    wire [31:0] thumb_angle;
-    wire [31:0] index_angle;
-    wire [31:0] middle_angle;
-    wire [31:0] ring_angle;
-    wire [31:0] pinky_angle;
+    wire thumb_extended;
+    wire index_extended;
+    wire middle_extended;
+    wire ring_extended;
+    wire pinky_extended;
 
     wire thumb_angle_valid;
     wire index_angle_valid;
@@ -43,11 +43,11 @@ module gesture_classifier (
         .dist_thumb_index(dist_thumb_index),
         .dist_wrist_middle(dist_wrist_middle),
 
-        .thumb_angle(thumb_angle),
-        .index_angle(index_angle),
-        .middle_angle(middle_angle),
-        .ring_angle(ring_angle),
-        .pinky_angle(pinky_angle),
+        .thumb_extended(thumb_extended),
+        .index_extended(index_extended),
+        .middle_extended(middle_extended),
+        .ring_extended(ring_extended),
+        .pinky_extended(pinky_extended),
 
         .thumb_angle_valid(thumb_angle_valid),
         .index_angle_valid(index_angle_valid),
@@ -62,28 +62,30 @@ module gesture_classifier (
             valid_out <= 0;
         end
         else begin
-            valid_out <= 0;
             if (valid_in && all_angle_valid) begin
-                if (dist_thumb_index * 4 < dist_wrist_middle) begin
+                if (dist_thumb_index * 16 < dist_wrist_middle) begin
                     gesture_id <= PINCH;
                     valid_out <= 1;
                 end
-                else if (thumb_angle < ANGLE_THRESHOLD && index_angle < ANGLE_THRESHOLD && middle_angle < ANGLE_THRESHOLD && ring_angle < ANGLE_THRESHOLD && pinky_angle < ANGLE_THRESHOLD) begin
+                else if (!thumb_extended && !index_extended && !middle_extended && !ring_extended && !pinky_extended) begin
                     gesture_id <= FIST;
                     valid_out <= 1;
                 end
-                else if (thumb_angle > ANGLE_THRESHOLD && index_angle > ANGLE_THRESHOLD && middle_angle > ANGLE_THRESHOLD && ring_angle > ANGLE_THRESHOLD && pinky_angle > ANGLE_THRESHOLD) begin
+                else if (thumb_extended && index_extended && middle_extended && ring_extended && pinky_extended) begin
                     gesture_id <= OPEN_HAND;
                     valid_out <= 1;
                 end
-                else if (index_angle > ANGLE_THRESHOLD && thumb_angle < ANGLE_THRESHOLD && middle_angle < ANGLE_THRESHOLD && ring_angle < ANGLE_THRESHOLD && pinky_angle < ANGLE_THRESHOLD) begin
+                else if (index_extended && !thumb_extended && !middle_extended && !ring_extended && !pinky_extended) begin
                     gesture_id <= INDEX_FINGER;
                     valid_out <= 1;
-                end
+                end    
                 else begin
                     gesture_id <= UNKNOWN;
                     valid_out <= 1;
                 end
+            end
+            else begin
+                valid_out <= 0;
             end
         end
     end
