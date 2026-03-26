@@ -41,7 +41,7 @@ module uart_top
             .tick(tick)
          );
     
-    uart_receiver
+    uart_rx
         #(
             .DBITS(DBITS),
             .SB_TICK(SB_TICK)

@@ -21,7 +21,7 @@ reg [7:0] data_reg ,data_next;
 reg rx_sync_1, rx_sync_2;
 always @(posedge clk_50MHz) begin
     rx_sync_1 <= rx;
-    rx_sync_2 <= rx_sync_1; // Use rx_sync_2 in your FSM instead of rx
+    rx_sync_2 <= rx_sync_1; 
 end
 //Register Logic
 always @(posedge clk_50MHz, posedge reset) begin
