@@ -22,10 +22,10 @@ module fifo
 	wire write_enabled;
 	
 	// register file (memory) write operation
-	always @(posedge clk)
+	always @(posedge clk) begin
 		if(write_enabled)
 			memory[current_write_addr] <= write_data_in;
-			
+	end	
 	// register file (memory) read operation
 	assign read_data_out = memory[current_read_addr];
 	
@@ -34,7 +34,12 @@ module fifo
 	
 	// FIFO control logic
 	// register logic
-	always @(posedge clk or posedge reset)
+	integer i;
+	initial begin
+    	for (i = 0; i < 2**ADDR_SPACE_EXP; i = i + 1)
+        	memory[i] = 8'h00;
+	end
+	always @(posedge clk or posedge reset) begin
 		if(reset) begin
 			current_write_addr 	<= 0;
 			current_read_addr 	<= 0;
@@ -47,7 +52,7 @@ module fifo
 			fifo_full  			<= full_buff;
 			fifo_empty 			<= empty_buff;
 		end
-
+	end
 	// next state logic for read and write address pointers
 	always @* begin
 		// successive pointer values
@@ -61,7 +66,7 @@ module fifo
 		empty_buff = fifo_empty;
 		
 		
-		case({write_to_fifo, read_from_fifo})     
+		case({write_to_fifo, read_from_fifo})      
 			
 			
 			2'b01:	
