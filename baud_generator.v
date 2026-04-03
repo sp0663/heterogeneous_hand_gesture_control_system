@@ -1,7 +1,7 @@
 module baud_rate_generator
     #(              // 115200 baud
         parameter   N = 5,     // number of counter bits
-                    M =27     // counter limit value
+                    M = 27     // counter limit value
     )
     (
         input clk_50MHz,       // DE-10 clock

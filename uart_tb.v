@@ -1,77 +1,89 @@
 `timescale 1ns / 1ps
 
 module uart_top_tb();
-    reg clk, reset, read_uart, write_uart, rx;
+
+    reg clk_50MHz, reset, rx, write_uart;
     reg [7:0] write_data;
-    wire rx_full, rx_empty, tx;
-    wire [7:0] read_data;
+    wire tx, frame_ready;
+    wire [335:0] landmarks_x;
+    wire [335:0] landmarks_y;
 
-    // 50MHz Clock (20ns period)
-    always #10 clk = ~clk;
+    // 50MHz Clock Generation (20ns period)
+    always #10 clk_50MHz = ~clk_50MHz;
 
-    // Instantiate your Top Module
+    // Instantiate the Top Module
     uart_top #(
-        .BR_LIMIT(27),     // 115200 baud @ 50MHz
-        .FIFO_EXP(7)       // 128-byte buffer
+        .BR_LIMIT(27),
+        .FIFO_EXP(7)
     ) dut (
-        .clk_50MHz(clk), .reset(reset), .read_uart(read_uart),
-        .write_uart(write_uart), .rx(rx), .write_data(write_data),
-        .rx_full(rx_full), .rx_empty(rx_empty), .tx(tx), .read_data(read_data)
+        .clk_50MHz(clk_50MHz),
+        .reset(reset),
+        .rx(rx),
+        .write_data(write_data),
+        .write_uart(write_uart),
+        .tx(tx),
+        .frame_ready(frame_ready),
+        .landmarks_x(landmarks_x),
+        .landmarks_y(landmarks_y)
     );
 
-    // GTKWave Setup: Generate the .vcd file
-    initial begin
-        $dumpfile("uart_sim.vcd"); // Name of the file for GTKWave
-        $dumpvars(0, uart_top_tb);   // Dump all signals in the testbench
-    end
-
-    // Bit period for 115200 baud = 1/115200 = 8.68us = 8680ns
+    // UART Transmit Task (Calculated for 50MHz, BR_LIMIT=27, 16 Oversampling)
     task send_byte(input [7:0] data);
         integer i;
         begin
-            rx = 0; // Start bit
-            #(8680);
-            for (i=0; i<8; i=i+1) begin
-                rx = data[i]; // Send LSB first
-                #(8680);
+            // Send Start Bit (0)
+            rx = 0;
+            #(432 * 20); 
+            // Send 8 Data Bits (LSB First)
+            for (i = 0; i < 8; i = i + 1) begin
+                rx = data[i];
+                #(432 * 20);
             end
-            rx = 1; // Stop bit
-            #(8680);
+            // Send Stop Bit (1)
+            rx = 1;
+            #(432 * 20);
         end
     endtask
 
     initial begin
-        // Initialize
-        clk = 0; reset = 1; rx = 1; 
-        read_uart = 0; write_uart = 0; write_data = 0;
+        $dumpfile("uart_sim.vcd");
+        $dumpvars(0, uart_top_tb);
+
+        // 1. Initialization
+        clk_50MHz = 0;
+        reset = 1;
+        rx = 1; // UART Idle state is High
+        write_uart = 0;
+        write_data = 0;
+
+        #200 reset = 0; 
+        #1000; 
+
+        // 2. Send Landmark 0 (ID = 0, X = 0x1122, Y = 0x3344)
+        $display("[%0t] Sending Landmark 0", $time);
+        send_byte(8'd0);    // ID 0
+        send_byte(8'h11);   // X High
+        send_byte(8'h22);   // X Low
+        send_byte(8'h33);   // Y High
+        send_byte(8'h44);   // Y Low
+
+        // 3. Send Landmark 1 (ID = 1, X = 0x5566, Y = 0x7788)
+        $display("[%0t] Sending Landmark 1", $time);
+        send_byte(8'd1);    // ID 1
+        send_byte(8'h55);   // X High
+        send_byte(8'h66);   // X Low
+        send_byte(8'h77);   // Y High
+        send_byte(8'h88);   // Y Low
+
+        // 4. Wait for processing to clear
+        #100000;
         
-        #100 reset = 0; // Release reset
-        #200;
-
-        // Send a 4-byte Landmark Packet (X=0x1234, Y=0x5678)
-        send_byte(8'hAA); // Header
-        send_byte(8'h12); // X High
-        send_byte(8'h34); // X Low
-        send_byte(8'h56); // Y High
-        send_byte(8'h78); // Y Low
-
-        // Simulate the Gesture Recognizer sending a "Result" (e.g., 0x01 for Palm)
-        #100000;             // Wait until RX is done
-        write_data = 8'h01;  // Put '01' on the TX bus
-        write_uart = 1;      // Pulse the "Write" signal to TX FIFO
-        #20 write_uart = 0;
-
-#1000000;            // Wait a long time to see the 'tx' wire toggle bit-by-bit     
-        
-        // Pulse read_uart to see data coming out of FIFO
-        repeat(5) begin
-            #100 read_uart = 1;
-            #20 write_uart = 0; // Pulse duration
-            read_uart = 0;
-            #500;
-        end
-
-        $display("Simulation Finished");
+        $display("=== SIMULATION RESULTS ===");
+        $display("X (Bits 15:0):  %h (Expected: 1122)", dut.STORAGE_UNIT.x_out[15:0]);
+        $display("Y (Bits 15:0):  %h (Expected: 3344)", dut.STORAGE_UNIT.y_out[15:0]);
+        $display("X[10] (Bits 31:16): %h (Expected: 5566)", dut.STORAGE_UNIT.x_out[31:16]);
+        $display("Y[10] (Bits 31:16): %h (Expected: 7788)", dut.STORAGE_UNIT.y_out[31:16]);
+        $display("[%0t] Simulation Finished", $time);
         $finish;
     end
 endmodule
