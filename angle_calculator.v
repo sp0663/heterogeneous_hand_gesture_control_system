@@ -1,61 +1,62 @@
-// Computes cosine of the angle between two vectors formed by three landmarks.
-// Uses dot product method: cos(angle) = dot(v1,v2) / (|v1| * |v2|)
-// Output is the dot product scaled comparison result — finger_extended is high
-// when angle > 160 degrees (i.e. cos < cos(160) = -0.9397)
+// Computes whether the angle between two vectors formed by three landmarks
+// exceeds 160 degrees using dot product comparison with hysteresis (120-160 deg).
+// No division — comparison is rearranged to use only multiplications.
+// All bit widths are sized to prevent overflow.
 //
-// To avoid division, we compare:
-//   dot(v1,v2) < COS_THRESHOLD * |v1| * |v2|
-// Rearranged to avoid floating point:
-//   dot(v1,v2)^2 * sign > COS_THRESHOLD^2 * |v1|^2 * |v2|^2
-//
-// Ports:
-//   x1,y1 — first point
-//   x2,y2 — middle point (vertex)
-//   x3,y3 — third point
-//   finger_extended — high when angle between vectors > 160 degrees
-//   valid_out       — registered one cycle after valid_in
+// angle > 160 deg  iff  dot < 0  AND  dot^2 * 8192 > 7234 * mag1_sq * mag2_sq
+// angle < 120 deg  iff  dot > 0  OR   dot^2 * 8192 < 2048 * mag1_sq * mag2_sq
 
 module angle_calculator (
     input clk,
     input rst,
     input valid_in,
 
-    input [15:0] x1, y1,
-    input [15:0] x2, y2,
-    input [15:0] x3, y3,
+    input [15:0] x1, y1,  // first point
+    input [15:0] x2, y2,  // middle point (vertex)
+    input [15:0] x3, y3,  // third point
 
     output reg finger_extended,
     output reg valid_out
 );
 
-    // cos(160 deg)^2 * 2^16 scaled numerator for comparison
-    // cos(160)^2 = 0.8830, we use scaled integer arithmetic
-    // comparison: dot^2 > 0.8830 * mag1_sq * mag2_sq AND dot < 0 (obtuse)
-    // We use Q0 integer arithmetic throughout since inputs are 16-bit integers
+    // Stage 1 registers — vectors and products
+    reg signed [16:0] vx1, vy1, vx2, vy2;  // 17-bit signed vectors
+    reg signed [34:0] dot;                   // 35-bit signed dot product
+    reg        [34:0] mag1_sq, mag2_sq;      // 35-bit unsigned magnitudes
+    reg               valid_s1;
 
-    reg signed [16:0] vx1, vy1, vx2, vy2;
-    reg signed [33:0] dot;
-    reg signed [33:0] dot_r;
-    reg [33:0]        mag1_sq, mag2_sq;
-    reg [33:0]        mag1_sq_r, mag2_sq_r;
-    reg               valid_r;
+    // Stage 2 registers
+    reg signed [34:0] dot_r;
+    reg        [34:0] mag1_sq_r, mag2_sq_r;
+    reg               valid_s2;
 
-    // Stage 1 — compute vectors and dot product / magnitudes (combinational regs)
+    // Stage 3 wires — wide multiplications (83-bit)
+    wire [82:0] lhs;       // dot^2 * 8192
+    wire [82:0] rhs_160;   // 7234 * mag1_sq * mag2_sq
+    wire [82:0] rhs_150;   // 6144 * mag1_sq * mag2_sq
+    wire [69:0] mag_prod;  // mag1_sq * mag2_sq
+
+    assign mag_prod  = mag1_sq_r * mag2_sq_r;
+    assign lhs       = (dot_r * dot_r) * 83'd8192;
+    assign rhs_160   = 83'd7234 * mag_prod;
+    assign rhs_150   = 83'd6144 * mag_prod;
+
+    // Stage 1 — compute vectors, dot product, magnitudes
     always @(posedge clk) begin
         if (rst) begin
-            vx1      <= 0; vy1      <= 0;
-            vx2      <= 0; vy2      <= 0;
+            vx1      <= 0; vy1     <= 0;
+            vx2      <= 0; vy2     <= 0;
             dot      <= 0;
             mag1_sq  <= 0;
             mag2_sq  <= 0;
-            valid_r  <= 0;
+            valid_s1 <= 0;
         end else begin
-            valid_r <= valid_in;
+            valid_s1 <= valid_in;
 
-            vx1 = $signed({1'b0, x1}) - $signed({1'b0, x2});
-            vy1 = $signed({1'b0, y1}) - $signed({1'b0, y2});
-            vx2 = $signed({1'b0, x3}) - $signed({1'b0, x2});
-            vy2 = $signed({1'b0, y3}) - $signed({1'b0, y2});
+            vx1 <= $signed({1'b0, x1}) - $signed({1'b0, x2});
+            vy1 <= $signed({1'b0, y1}) - $signed({1'b0, y2});
+            vx2 <= $signed({1'b0, x3}) - $signed({1'b0, x2});
+            vy2 <= $signed({1'b0, y3}) - $signed({1'b0, y2});
 
             dot     <= vx1 * vx2 + vy1 * vy2;
             mag1_sq <= vx1 * vx1 + vy1 * vy1;
@@ -63,36 +64,33 @@ module angle_calculator (
         end
     end
 
-    // Stage 2 — register dot and mags, then compare
-    // cos(angle) < cos(160) iff:
-    //   dot < 0  AND  dot^2 > cos(160)^2 * mag1_sq * mag2_sq
-    // cos(160)^2 = 0.8830, approximated as 7237/8192 (13-bit shift)
-    // i.e. dot^2 * 8192 > 7237 * mag1_sq * mag2_sq
+    // Stage 2 — register for timing
     always @(posedge clk) begin
         if (rst) begin
             dot_r     <= 0;
             mag1_sq_r <= 0;
             mag2_sq_r <= 0;
+            valid_s2  <= 0;
         end else begin
             dot_r     <= dot;
             mag1_sq_r <= mag1_sq;
             mag2_sq_r <= mag2_sq;
+            valid_s2  <= valid_s1;
         end
     end
 
-    // Stage 3 — final comparison and output
+    // Stage 3 — compare and output with hysteresis
     always @(posedge clk) begin
         if (rst) begin
             finger_extended <= 0;
             valid_out       <= 0;
         end else begin
-            valid_out <= valid_r;
-            if (valid_r) begin
-                // angle > 160 deg iff dot < 0 and dot^2 > cos(160)^2 * mag1*mag2
-                if (dot_r < 0 && (dot_r * dot_r) * 8192 > 7237 * (mag1_sq_r * mag2_sq_r))
-                    finger_extended <= 1;
-                else
-                    finger_extended <= 0;
+            valid_out <= valid_s2;
+            if (valid_s2) begin
+                if (dot_r < 0 && lhs > rhs_160)
+                    finger_extended <= 1;        // angle > 160 deg — turn on
+                else if (dot_r >= 0 || lhs < rhs_150)
+                    finger_extended <= 0;      
             end
         end
     end

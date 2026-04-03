@@ -67,7 +67,7 @@ module gesture_classifier (
                     gesture_id <= PINCH;
                     valid_out <= 1;
                 end
-                else if (!thumb_extended && !index_extended && !middle_extended && !ring_extended && !pinky_extended) begin
+                else if (!index_extended && !middle_extended && !ring_extended && !pinky_extended) begin
                     gesture_id <= FIST;
                     valid_out <= 1;
                 end
@@ -75,7 +75,7 @@ module gesture_classifier (
                     gesture_id <= OPEN_HAND;
                     valid_out <= 1;
                 end
-                else if (index_extended && !thumb_extended && !middle_extended && !ring_extended && !pinky_extended) begin
+                else if (index_extended && !middle_extended && !ring_extended && !pinky_extended) begin
                     gesture_id <= INDEX_FINGER;
                     valid_out <= 1;
                 end    

@@ -14,7 +14,7 @@ localparam [1:0] idle = 2'b00,
                  start= 2'b01,
                  data = 2'b10,
                  stop = 2'b11;
-reg [1:0] state,next_state;
+reg [1:0] state, next_state;
 reg [3:0] tick_reg, tick_next;
 reg [2:0] nbits_reg, nbits_next;
 reg [7:0] data_reg ,data_next;
