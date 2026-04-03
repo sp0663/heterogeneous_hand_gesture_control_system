@@ -4,7 +4,7 @@
 // All bit widths are sized to prevent overflow.
 //
 // angle > 160 deg  iff  dot < 0  AND  dot^2 * 8192 > 7234 * mag1_sq * mag2_sq
-// angle < 120 deg  iff  dot > 0  OR   dot^2 * 8192 < 2048 * mag1_sq * mag2_sq
+// angle < 150 deg  iff  dot > 0  OR   dot^2 * 8192 < 2048 * mag1_sq * mag2_sq
 
 module angle_calculator (
     input clk,
