@@ -7,7 +7,7 @@ module uart_top_tb();
     wire tx, frame_ready;
     wire [335:0] landmarks_x;
     wire [335:0] landmarks_y;
-
+    integer j;
     // 50MHz Clock Generation (20ns period)
     always #10 clk_50MHz = ~clk_50MHz;
 
@@ -61,7 +61,7 @@ module uart_top_tb();
 
         // 2. Send Landmark 0 (ID = 0, X = 0x1122, Y = 0x3344)
         $display("[%0t] Sending Landmark 0", $time);
-        send_byte(8'd0);    // ID 0
+        send_byte(8'h00);   // ID = 0
         send_byte(8'h11);   // X High
         send_byte(8'h22);   // X Low
         send_byte(8'h33);   // Y High
@@ -69,11 +69,49 @@ module uart_top_tb();
 
         // 3. Send Landmark 1 (ID = 1, X = 0x5566, Y = 0x7788)
         $display("[%0t] Sending Landmark 1", $time);
-        send_byte(8'd1);    // ID 1
+        send_byte(8'h01);   // ID = 1
         send_byte(8'h55);   // X High
         send_byte(8'h66);   // X Low
         send_byte(8'h77);   // Y High
         send_byte(8'h88);   // Y Low
+
+        // Send Landmark 2 (ID = 2, X = 0x99AA, Y = 0xBBCC)
+        send_byte(8'h02);   // ID = 2
+        send_byte(8'h99);   // X High
+        send_byte(8'hAA);   // X Low
+        send_byte(8'hBB);   // Y High
+        send_byte(8'hCC);   // Y Low
+
+        //Send Landmark 3 (ID = 3, X = 0xDDEE, Y = 0xFF00)
+        send_byte(8'h03);   // ID = 3
+        send_byte(8'hDD);   // X High
+        send_byte(8'hEE);   // X Low
+        send_byte(8'hFF);   // Y High
+        send_byte(8'h00);   // Y Low
+
+        //Send Landmark 4 (ID = 4, X = 0x1234, Y = 0x5678)
+        send_byte(8'h04);   // ID = 4
+        send_byte(8'h12);   // X High
+        send_byte(8'h34);   // X Low
+        send_byte(8'h56);   // Y High
+        send_byte(8'h78);   // Y Low
+
+        //Send Landmark 5 (ID = 5, X = 0x9ABC, Y = 0xDEF0)
+        send_byte(8'h05);   // ID = 5
+        send_byte(8'h9A);   // X High
+        send_byte(8'hBC);   // X Low
+        send_byte(8'hDE);   // Y High
+        send_byte(8'hF0);   // Y Low
+
+        //21 landmarks total, so send 16 more with dummy data
+        
+        for (j = 6; j < 21; j = j + 1) begin
+            send_byte(j);   // ID = j
+            send_byte(8'hAA);   // X High
+            send_byte(8'h30);   // X Low
+            send_byte(8'hDE);   // Y High
+            send_byte(8'h10);   // Y Low
+        end
 
         // 4. Wait for processing to clear
         #100000;
