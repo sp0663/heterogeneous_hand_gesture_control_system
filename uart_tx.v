@@ -1,4 +1,4 @@
-module uart_transmitter
+module uart_tx
     #(
         parameter   DBITS = 8,          // number of data bits
                     SB_TICK = 16        // number of stop bit / oversampling ticks (1 stop bit)

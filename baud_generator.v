@@ -1,4 +1,4 @@
-module baud_rate_generator
+module baud_generator
     #(              // 115200 baud
         parameter   N = 5,     // number of counter bits
                     M = 27     // counter limit value

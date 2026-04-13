@@ -31,15 +31,11 @@ module angle_calculator (
     reg               valid_s2;
 
     // Stage 3 wires — wide multiplications (83-bit)
-    wire [82:0] lhs;       // dot^2 * 8192
-    wire [82:0] rhs_160;   // 7234 * mag1_sq * mag2_sq
-    wire [82:0] rhs_150;   // 6144 * mag1_sq * mag2_sq
-    wire [69:0] mag_prod;  // mag1_sq * mag2_sq
+    reg [82:0] lhs;       // dot^2 * 8192
+    reg [82:0] rhs_160;   // 7234 * mag1_sq * mag2_sq
+    reg [82:0] rhs_150;   // 6144 * mag1_sq * mag2_sq
+    reg [69:0] mag_prod;  // mag1_sq * mag2_sq
 
-    assign mag_prod  = mag1_sq_r * mag2_sq_r;
-    assign lhs       = (dot_r * dot_r) * 83'd8192;
-    assign rhs_160   = 83'd7234 * mag_prod;
-    assign rhs_150   = 83'd6144 * mag_prod;
 
     // Stage 1 — compute vectors, dot product, magnitudes
     always @(posedge clk) begin
@@ -57,7 +53,6 @@ module angle_calculator (
             vy1 <= $signed({1'b0, y1}) - $signed({1'b0, y2});
             vx2 <= $signed({1'b0, x3}) - $signed({1'b0, x2});
             vy2 <= $signed({1'b0, y3}) - $signed({1'b0, y2});
-
             dot     <= vx1 * vx2 + vy1 * vy2;
             mag1_sq <= vx1 * vx1 + vy1 * vy1;
             mag2_sq <= vx2 * vx2 + vy2 * vy2;
@@ -78,6 +73,26 @@ module angle_calculator (
             valid_s2  <= valid_s1;
         end
     end
+	 
+	 always @(posedge clk) begin 
+			if (rst) begin
+				mag_prod <= 0;
+				lhs <= 0;
+			end else begin
+				mag_prod  <= mag1_sq_r * mag2_sq_r;
+				lhs <= (dot_r * dot_r) * 83'd8192;
+			end
+	 end
+	 
+	 always @(posedge clk) begin
+			if (rst) begin
+				rhs_160 <= 0;
+				rhs_150 <= 0;
+			end else begin
+				rhs_160  <= 83'd7234 * mag_prod;
+				rhs_150  <= 83'd6144 * mag_prod;
+			end
+	 end
 
     // Stage 3 — compare and output with hysteresis
     always @(posedge clk) begin

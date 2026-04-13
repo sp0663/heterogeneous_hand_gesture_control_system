@@ -13,7 +13,6 @@ module gesture_classifier (
     output reg valid_out
 );
     localparam PINCH = 3'b000, FIST = 3'b001, OPEN_HAND = 3'b010, INDEX_FINGER = 3'b011, UNKNOWN = 3'b100;
-    localparam ANGLE_THRESHOLD = 32'd182910; // 160 degrees in fixed-point representation (Q16.16)
 
     wire [32:0] dist_thumb_index;
     wire [32:0] dist_wrist_middle;
