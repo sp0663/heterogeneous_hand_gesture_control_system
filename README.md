@@ -38,14 +38,11 @@ The FPGA design is structured as a sequential processing pipeline:
 |---|---|---|
 | **UART RX** | `uart_rx.v` | Low-level serial receiver |
 | **Baud Generator** | `baud_generator.v` | Clock divider for UART timing |
-| **Frame Sync** | `frame_sync.v` | Detects packet boundaries in the serial stream |
-| **Packet Formatter** | `packet_formatter.v` | Parses incoming bytes into landmark fields |
 | **Landmark Storage** | `landmark_storage.v` | Buffers all 21 (x, y) coordinates until a full frame is ready |
 | **Landmark Distance** | `landmark_distance.v` | Computes Euclidean distances between keypoints |
 | **Angle Calculator** | `angle_calculator.v` | Computes joint angles between landmark triplets |
 | **Feature Extractor** | `feature_extractor.v` | Aggregates distances and angles into a feature vector |
 | **Gesture Classifier** | `gesture_classifier.v` | Applies rule-based logic to map features to a gesture ID |
-| **Output Interface** | `output_interface.v` | Formats and serializes the gesture ID for UART transmission |
 | **UART TX** | `uart_tx.v` | Low-level serial transmitter |
 | **Top Level** | `gesture_system_top.v` | Wires all modules together |
 

@@ -10,14 +10,12 @@ module uart_top
         input clk_50MHz,               
         input reset,                    
         input write_uart,               // Remains for TX (sending data back)
-        input rx,                       
-        input [DBITS-1:0] write_data,   
+        input rx,
+		  input [DBITS - 1:0] write_data,
         output tx,                      
-        
-        // Landmark Outputs
-        output frame_ready,             // High when all 21 points are stored
-        output [335:0] landmarks_x,     // Full X vector for the recognizer
-        output [335:0] landmarks_y      // Full Y vector for the recognizer
+        output frame_ready,
+        output [335:0] landmarks_x,     
+        output [335:0] landmarks_y        
     );
     
     // Internal Connection Signals
@@ -30,7 +28,6 @@ module uart_top
     wire [DBITS-1:0] rx_data_out;       
     wire [DBITS-1:0] fifo_rx_data;      // Data leaving FIFO
     wire rx_empty;                      // FIFO status
-    
     // Assembler to Storage Wires
     wire [15:0] assemble_x, assemble_y;
     wire [4:0]  assemble_id;
@@ -38,7 +35,7 @@ module uart_top
     wire        fifo_rd_en;             // Automated read signal from Assembler
 
     // 1. Baud Rate Generator
-    baud_rate_generator #( .M(BR_LIMIT), .N(BR_BITS) ) BAUD_RATE_GEN (
+    baud_generator #( .M(BR_LIMIT), .N(BR_BITS) ) BAUD_RATE_GEN (
         .clk_50MHz(clk_50MHz), .reset(reset), .tick(tick)
     );
     
@@ -84,7 +81,7 @@ module uart_top
     );
     
     // 6. UART Transmitter (For sending results back to PC)
-    uart_transmitter #( .DBITS(DBITS), .SB_TICK(SB_TICK) ) UART_TX_UNIT (
+    uart_tx #( .DBITS(DBITS), .SB_TICK(SB_TICK) ) UART_TX_UNIT (
         .clk_50MHz(clk_50MHz), .reset(reset),
         .tx_start(tx_fifo_not_empty), .sample_tick(tick),
         .data_in(tx_fifo_out), .tx_done(tx_done_tick), .tx(tx)
