@@ -10,7 +10,7 @@ module gesture_system_top (
     wire [335:0] x;
     wire [335:0] y;
 
-    wire [2:0] gesture_id;
+    wire [7:0] gesture_id;
     wire gesture_valid;
 
     gesture_classifier gesture_classifier_inst (

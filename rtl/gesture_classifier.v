@@ -9,10 +9,10 @@ module gesture_classifier (
     input [335:0] x,
     input [335:0] y,
 
-    output reg [2:0] gesture_id,
+    output reg [7:0] gesture_id,
     output reg valid_out
 );
-    localparam PINCH = 3'b000, FIST = 3'b001, OPEN_HAND = 3'b010, INDEX_FINGER = 3'b011, UNKNOWN = 3'b100;
+    localparam PINCH = 0, FIST = 1, OPEN_HAND = 2, INDEX_FINGER = 3, UNKNOWN = 4;
 
     wire [32:0] dist_thumb_index;
     wire [32:0] dist_wrist_middle;
