@@ -30,6 +30,7 @@ module gesture_classifier (
     wire pinky_angle_valid;
     wire all_angle_valid = thumb_angle_valid & index_angle_valid & middle_angle_valid & ring_angle_valid & pinky_angle_valid;
 
+    reg valid_in_1, valid_in_2, valid_in_3;  // Delayed versions of valid_in for timing alignment
     
     feature_extractor features (
         .clk(clk),
@@ -57,11 +58,23 @@ module gesture_classifier (
 
     always @(posedge clk) begin
         if (rst) begin
+            valid_in_1 <= 0;
+            valid_in_2 <= 0;
+            valid_in_3 <= 0;
+        end else begin
+            valid_in_1 <= valid_in;
+            valid_in_2 <= valid_in_1;
+            valid_in_3 <= valid_in_2;
+        end
+    end
+
+    always @(posedge clk) begin
+        if (rst) begin
             gesture_id <= 0;
             valid_out <= 0;
         end
         else begin
-            if (valid_in && all_angle_valid) begin
+            if (valid_in_3 && all_angle_valid) begin
                 if (dist_thumb_index * 16 < dist_wrist_middle) begin
                     gesture_id <= PINCH;
                     valid_out <= 1;

@@ -134,14 +134,11 @@ heterogeneous_hand_gesture_control_system/
 ├── uart_rx.v                 # UART receiver
 ├── uart_tx.v                 # UART transmitter
 ├── baud_generator.v          # Baud rate clock divider
-├── frame_sync.v              # Packet framing
-├── packet_formatter.v        # Packet parsing
 ├── landmark_storage.v        # Landmark frame buffer
 ├── landmark_distance.v       # Distance computation
 ├── angle_calculator.v        # Angle computation
 ├── feature_extractor.v       # Feature aggregation
-├── gesture_classifier.v      # Rule-based classifier
-└── output_interface.v        # Output serialization
+└── gesture_classifier.v      # Rule-based classifier
 ```
 
 ---
