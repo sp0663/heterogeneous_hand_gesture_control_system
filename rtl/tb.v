@@ -28,11 +28,11 @@ module gesture_system_top_tb;
     // --------------------------------------------------------
     // Parameters
     // --------------------------------------------------------
-    localparam CLK_PERIOD   = 20;          // ns  (50 MHz)
+    localparam CLK_PERIOD   = 10;          // ns  (50 MHz)
     localparam BAUD_TICKS   = 27;          // baud generator M
     localparam OS_TICKS     = 16;          // oversampling ratio
     // One UART bit period in ns:
-    localparam BIT_PERIOD   = BAUD_TICKS * OS_TICKS * CLK_PERIOD; // 8640 ns
+    localparam BIT_PERIOD   = BAUD_TICKS * OS_TICKS * CLK_PERIOD * 2; // 8640 ns
 
     // Expected gesture IDs (must match gesture_classifier.v)
     localparam PINCH        = 3'b000;
@@ -53,10 +53,10 @@ module gesture_system_top_tb;
     // Instantiate DUT
     // --------------------------------------------------------
     gesture_system_top dut (
-        .clk (clk),
-        .rst (rst),
-        .rx  (rx),
-        .tx  (tx)
+        .clk_100MHz (clk),   // tb drives 100MHz
+        .rst        (rst),
+        .rx         (rx),
+        .tx         (tx)
     );
 
     // --------------------------------------------------------
