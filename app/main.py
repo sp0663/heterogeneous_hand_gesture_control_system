@@ -5,7 +5,7 @@ from hand_tracker import HandTracker
 from media_controller import MediaController
 from config import GESTURE_HOLD_TIME, DEBUG
 
-SERIAL_PORT  = "COM8"
+SERIAL_PORT  = "/dev/ttyUSB1"  # Update as needed (e.g., "COM8" on Windows)
 BAUD_RATE    = 115200
 ACK_TIMEOUT  = 0.5
 

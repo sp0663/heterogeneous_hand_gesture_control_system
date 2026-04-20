@@ -1,3 +1,4 @@
 *sim.out
 *.vcd
 *.vvp
+*.venv

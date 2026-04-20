@@ -31,7 +31,7 @@ module tb_gesture_classifier;
             x = lx;
             y = ly;
             valid_in = 1;
-            repeat(20) @(posedge clk); // hold for CORDIC latency
+            repeat(2) @(posedge clk); 
             valid_in = 0;
             repeat(50) @(posedge clk);  // gap between frames
         end
