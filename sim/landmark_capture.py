@@ -12,7 +12,9 @@ GESTURE_NAMES = {
     1: "FIST",
     2: "OPEN_HAND",
     3: "INDEX_FINGER",
-    4: "UNKNOWN"
+    4: "UNKNOWN",
+    5: "PINCH_CW",
+    6: "PINCH_ACW"
 }
 
 tracker = HandTracker()
