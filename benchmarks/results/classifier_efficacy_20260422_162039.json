@@ -1,0 +1,2173 @@
+{
+  "metadata": {
+    "dataset": "/home/dsd/Downloads/comparative_benchmarks/data/static_gesture_dataset.json",
+    "total_samples": 200,
+    "mode": "both",
+    "fpga_backend": "serial",
+    "classes": [
+      "fist",
+      "open_palm",
+      "index_finger",
+      "pinch"
+    ]
+  },
+  "per_sample": [
+    {
+      "sample_id": "fist_0035",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.4127,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 12.1826,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0044",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.665,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 18.5784,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0039",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7016,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 10.1484,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0034",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6454,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.1222,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0046",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6876,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.1544,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0005",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6842,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4012,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0045",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6942,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.7515,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0040",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6983,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4448,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0042",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.698,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 13.7743,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0047",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6246,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.5439,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0000",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6896,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4169,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0024",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6976,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4134,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0003",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.635,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.6826,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0035",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.698,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.1756,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0026",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.7008,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5463,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0042",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.632,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3585,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0010",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6382,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5358,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0020",
+      "true_label": "index_finger",
+      "sw_prediction": "index_finger",
+      "sw_latency_ms": 0.694,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4306,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0029",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6977,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3809,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0006",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6356,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5462,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0003",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7401,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.3369,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0047",
+      "true_label": "pinch",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6955,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4236,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0022",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7495,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3137,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0014",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.634,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4775,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0018",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6915,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4287,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0027",
+      "true_label": "pinch",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6293,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4893,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0005",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6895,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4289,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0024",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6313,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5476,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0016",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6772,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.422,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0042",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7426,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3215,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0049",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6449,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5506,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0010",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6881,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3788,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0025",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6316,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4864,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0001",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7375,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3131,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0018",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.688,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.425,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0016",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7392,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3309,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0037",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6908,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4384,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0004",
+      "true_label": "pinch",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6891,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4207,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0041",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6898,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4103,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0024",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6825,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.433,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0026",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6358,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.1543,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0048",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6777,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4343,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0008",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6978,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4069,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0029",
+      "true_label": "pinch",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6351,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.553,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0032",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7432,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.3006,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0041",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6359,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5359,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0028",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6884,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4435,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0023",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6877,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4263,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0017",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6898,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4153,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0046",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6924,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4286,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0011",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6867,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4053,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0045",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6921,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.4111,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0007",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.751,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch_cw",
+      "fpga_latency_ms": 14.2901,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0016",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6356,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.492,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0027",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6373,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5375,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0024",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6794,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.495,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0030",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6865,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3749,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0037",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6648,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.4613,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0016",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6836,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4512,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0033",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6248,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5936,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0049",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6816,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4283,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0009",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6864,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4739,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0028",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7309,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3238,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0021",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6298,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4805,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0011",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6862,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 15.0558,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0002",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6182,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 9.7829,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0029",
+      "true_label": "index_finger",
+      "sw_prediction": "index_finger",
+      "sw_latency_ms": 0.6741,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4177,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0026",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6679,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.4638,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0017",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6221,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5082,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0034",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6839,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4275,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0025",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6798,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3964,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0039",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6343,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5171,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0005",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6856,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4059,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0012",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6819,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4092,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0039",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6815,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4098,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0031",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6139,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5614,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0001",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.625,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5309,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0009",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6727,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3806,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0049",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6792,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3999,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0015",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6732,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4075,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0041",
+      "true_label": "pinch",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6211,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.5398,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0037",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6252,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.5467,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0013",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.7092,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3307,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0008",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7249,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.5167,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0021",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6767,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 13.808,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0017",
+      "true_label": "pinch",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6174,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4759,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0001",
+      "true_label": "index_finger",
+      "sw_prediction": "index_finger",
+      "sw_latency_ms": 0.6706,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.5568,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0025",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6805,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3137,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0007",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6871,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5223,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0035",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6766,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.2969,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0029",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6263,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 10.5557,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0009",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6172,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5293,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0004",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6818,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4386,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0002",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7263,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.3287,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0032",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6252,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5661,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0049",
+      "true_label": "pinch",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6769,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.5733,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0002",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6823,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.3071,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0000",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6764,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4596,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0022",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6264,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5484,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0015",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7291,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.4724,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0043",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7217,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.2329,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0000",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6826,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4547,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0027",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6819,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4404,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0033",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6797,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4414,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0033",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6727,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4507,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0010",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6716,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.3989,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0038",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6952,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5344,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0037",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6855,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3141,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0015",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6881,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.4121,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0040",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6673,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.4344,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0048",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6801,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4337,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0038",
+      "true_label": "index_finger",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6921,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.4179,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0019",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6286,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 10.5159,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0006",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6824,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4323,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0043",
+      "true_label": "index_finger",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6974,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4239,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0036",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6503,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5111,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0032",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6838,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4381,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0006",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6806,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4623,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0047",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6816,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4206,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0034",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6711,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.4428,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0040",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6851,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4443,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0036",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.72,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3663,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0004",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6333,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5591,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0006",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6776,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3884,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0021",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6749,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4494,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0045",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6756,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4217,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0015",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6183,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5722,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0048",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6754,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.4439,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0043",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6261,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.575,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0011",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6749,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4024,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0044",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6848,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4053,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0007",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6299,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 15.0173,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0043",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6812,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 9.9349,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0014",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.674,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.439,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0010",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6777,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.425,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0012",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6238,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5331,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0038",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6242,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.5333,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0044",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6705,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 10.4694,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0000",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6732,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.4857,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0001",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6751,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.464,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0048",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6702,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4515,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0003",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6789,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4851,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0003",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6974,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3743,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0031",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6929,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4148,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0036",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6826,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4327,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0031",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.7411,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3302,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0027",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6815,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4292,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0022",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6795,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.446,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0034",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6802,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4256,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0030",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6805,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4144,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0008",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6841,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4394,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0002",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6861,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4218,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0026",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6826,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4475,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0041",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.7417,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3235,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0025",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6773,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4671,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0021",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6913,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3935,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0014",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6758,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5582,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0047",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.7554,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 13.9439,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0042",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.7366,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.2746,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0014",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.3864,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.8319,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0011",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.3192,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 15.2055,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0019",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6924,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.7124,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0020",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6864,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.2961,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0019",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6837,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.0251,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0023",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6823,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4139,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0030",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6284,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5231,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0004",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6857,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4192,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0020",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6875,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4285,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0022",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6927,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.7189,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0012",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6771,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3242,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0028",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6303,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.1772,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0008",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.627,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3855,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0033",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.745,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.2704,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0009",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6848,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4263,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0020",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6811,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5038,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0023",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6426,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3825,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0028",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6899,
+      "sw_correct": 0,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.0415,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0019",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.687,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3566,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0040",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6907,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3848,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0012",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.7426,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4133,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0046",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.7005,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.1418,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "index_finger_0017",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6937,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 13.9865,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0030",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6818,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.0346,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0007",
+      "true_label": "index_finger",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.681,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4075,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0005",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6712,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4618,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0023",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6678,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3675,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0013",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6889,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4617,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0031",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7401,
+      "sw_correct": 1,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.2426,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0044",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6229,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.4937,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0013",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6754,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.4581,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0035",
+      "true_label": "pinch",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6303,
+      "sw_correct": 0,
+      "fpga_prediction": "pinch",
+      "fpga_latency_ms": 14.642,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0013",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.6929,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.0861,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "fist_0018",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6829,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3782,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "pinch_0038",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.7278,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.3393,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "index_finger_0045",
+      "true_label": "index_finger",
+      "sw_prediction": "index_finger",
+      "sw_latency_ms": 0.6794,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3447,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "fist_0046",
+      "true_label": "fist",
+      "sw_prediction": "fist",
+      "sw_latency_ms": 0.6306,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.5812,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0036",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.3566,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 18.8407,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "open_palm_0032",
+      "true_label": "open_palm",
+      "sw_prediction": "unknown",
+      "sw_latency_ms": 0.3494,
+      "sw_correct": 0,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 15.0276,
+      "fpga_correct": 1
+    },
+    {
+      "sample_id": "pinch_0018",
+      "true_label": "pinch",
+      "sw_prediction": "pinch",
+      "sw_latency_ms": 0.6764,
+      "sw_correct": 1,
+      "fpga_prediction": "unknown",
+      "fpga_latency_ms": 14.1815,
+      "fpga_correct": 0
+    },
+    {
+      "sample_id": "open_palm_0039",
+      "true_label": "open_palm",
+      "sw_prediction": "open_palm",
+      "sw_latency_ms": 0.6879,
+      "sw_correct": 1,
+      "fpga_prediction": "open_palm",
+      "fpga_latency_ms": 14.3343,
+      "fpga_correct": 1
+    }
+  ],
+  "software_classifier": {
+    "confusion_matrix": [
+      [
+        50,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        19,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        4,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        42
+      ]
+    ],
+    "metrics": {
+      "per_class": {
+        "fist": {
+          "tp": 50,
+          "fp": 5,
+          "fn": 0,
+          "precision": 0.9091,
+          "recall": 1.0,
+          "f1_score": 0.9524
+        },
+        "open_palm": {
+          "tp": 19,
+          "fp": 2,
+          "fn": 0,
+          "precision": 0.9048,
+          "recall": 1.0,
+          "f1_score": 0.95
+        },
+        "index_finger": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.6667,
+          "f1_score": 0.8
+        },
+        "pinch": {
+          "tp": 42,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.8936,
+          "f1_score": 0.9438
+        }
+      },
+      "accuracy": 0.9426,
+      "macro_precision": 0.9535,
+      "macro_recall": 0.8901,
+      "macro_f1": 0.9116,
+      "weighted_precision": 0.9479,
+      "weighted_recall": 0.9426,
+      "weighted_f1": 0.9412,
+      "support": {
+        "fist": 50,
+        "open_palm": 19,
+        "index_finger": 6,
+        "pinch": 47
+      }
+    },
+    "mean_latency_ms": 0.6692
+  },
+  "fpga_classifier": {
+    "backend": "serial",
+    "confusion_matrix": [
+      [
+        0,
+        48,
+        0,
+        0
+      ],
+      [
+        0,
+        50,
+        0,
+        0
+      ],
+      [
+        0,
+        45,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        15
+      ]
+    ],
+    "metrics": {
+      "per_class": {
+        "fist": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 48,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "open_palm": {
+          "tp": 50,
+          "fp": 94,
+          "fn": 0,
+          "precision": 0.3472,
+          "recall": 1.0,
+          "f1_score": 0.5155
+        },
+        "index_finger": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 45,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "pinch": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1_score": 0.9677
+        }
+      },
+      "accuracy": 0.4088,
+      "macro_precision": 0.3368,
+      "macro_recall": 0.4844,
+      "macro_f1": 0.3708,
+      "weighted_precision": 0.2098,
+      "weighted_recall": 0.4088,
+      "weighted_f1": 0.2595,
+      "support": {
+        "fist": 48,
+        "open_palm": 50,
+        "index_finger": 45,
+        "pinch": 16
+      }
+    },
+    "mean_latency_ms": 14.5126
+  }
+}
