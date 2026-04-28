@@ -25,9 +25,7 @@ module angle_calculator (
     output reg valid_out
 );
 
-    // ----------------------------------------------------------
     // Stage 1 — vector subtraction
-    // ----------------------------------------------------------
     reg signed [16:0] vx1, vy1, vx2, vy2;
     reg valid_s1;
 
@@ -45,9 +43,7 @@ module angle_calculator (
         end
     end
 
-    // ----------------------------------------------------------
     // Stage 2 — dot product and magnitude squares
-    // ----------------------------------------------------------
     reg signed [34:0] dot;
     reg        [34:0] mag1_sq, mag2_sq;
     reg valid_s2;
@@ -66,9 +62,7 @@ module angle_calculator (
         end
     end
 
-    // ----------------------------------------------------------
     // Stage 3 — mag_prod and lhs
-    // ----------------------------------------------------------
     reg [69:0]  mag_prod;
     reg [82:0]  lhs;
     reg valid_s3;
@@ -85,9 +79,7 @@ module angle_calculator (
         end
     end
 
-    // ----------------------------------------------------------
     // Stage 4 — rhs thresholds
-    // ----------------------------------------------------------
     reg [82:0] rhs_160, rhs_150;
     reg [82:0] lhs_r;
     reg valid_s4;
@@ -101,12 +93,11 @@ module angle_calculator (
         end else begin
             rhs_160  <= 83'd7234 * mag_prod;
             rhs_150  <= 83'd6144 * mag_prod;
-            lhs_r    <= lhs;        // keep lhs aligned with rhs
+            lhs_r    <= lhs;        
             valid_s4 <= valid_s3;
         end
     end
 
-    // Also need dot sign aligned to Stage 4 — pipeline it through s3→s4
     reg dot_neg_s3, dot_neg_s4;
     always @(posedge clk) begin
         if (rst) begin
@@ -118,9 +109,7 @@ module angle_calculator (
         end
     end
 
-    // ----------------------------------------------------------
     // Stage 5 — compare and output with hysteresis
-    // ----------------------------------------------------------
     always @(posedge clk) begin
         if (rst) begin
             finger_extended <= 0;

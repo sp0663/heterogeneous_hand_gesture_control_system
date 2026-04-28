@@ -1,3 +1,5 @@
+// UART Transmitter Module
+
 module uart_tx
     #(
         parameter   DBITS = 8,          // number of data bits

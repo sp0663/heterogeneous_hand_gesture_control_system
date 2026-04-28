@@ -1,3 +1,7 @@
+"""
+This module is the main application that integrates hand tracking, gesture recognition, and media control
+"""
+
 import cv2
 import serial
 import time

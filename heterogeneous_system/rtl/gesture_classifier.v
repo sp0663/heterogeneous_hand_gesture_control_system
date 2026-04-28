@@ -2,9 +2,8 @@
 // Static gestures: PINCH, FIST, OPEN_HAND, INDEX_FINGER.
 // Dynamic gestures: PINCH_CW, PINCH_ACW — detected by tracking the pinch-point
 // vector (midpoint of thumb-tip and index-tip, relative to the wrist) across
-// successive pinch frames and accumulating its signed cross product (proxy for
-// sin(delta_theta)). Mirrors the reference controller's rotation-accumulator
-// scheme in gesture_recogniser.py.
+// successive pinch frames and accumulating its signed cross product (proxy for sin(delta_theta)). 
+// Mirrors the reference controller's rotation-accumulator scheme in gesture_recogniser.py.
 
 
 module gesture_classifier (
@@ -96,7 +95,6 @@ module gesture_classifier (
         end
     end
 
-    // ------------------------------------------------------------------
     // Pinch-rotation tracking
     // Pinch-point := (thumb_tip + index_tip) / 2. To avoid losing a bit of
     // precision from the right-shift we keep the factor of two and work with
@@ -105,7 +103,6 @@ module gesture_classifier (
     // The factor is common to prev and curr frames so it rescales the
     // accumulator but leaves the cross-product sign (rotation direction)
     // untouched.
-    // ------------------------------------------------------------------
 
     wire [15:0] wrist_x = x[0 * 16 +: 16];
     wire [15:0] wrist_y = y[0 * 16 +: 16];
@@ -136,7 +133,7 @@ module gesture_classifier (
     // Noise gate: below NOISE_FLOOR the cross product is indistinguishable
     // from MediaPipe landmark jitter, so treat it as zero rotation. Without
     // this, a stationary pinch would slowly drift the accumulator over many
-    // frames and eventually fire a spurious CW/ACW.
+    // frames and eventually fire a CW/ACW.
     wire signed [31:0] cross_abs       = cross_scaled[31] ? -cross_scaled : cross_scaled;
     wire               cross_above_nf  = (cross_abs >= NOISE_FLOOR);
     wire signed [31:0] cross_effective = cross_above_nf ? cross_scaled : 32'sd0;

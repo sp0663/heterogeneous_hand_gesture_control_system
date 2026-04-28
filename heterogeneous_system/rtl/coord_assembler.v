@@ -1,3 +1,5 @@
+// Assembles 5 bytes from FIFO into landmark ID, x, and y outputs. Handles FIFO read latency with a simple FSM.
+
 module coord_assembler (
     input clk,
     input rst,

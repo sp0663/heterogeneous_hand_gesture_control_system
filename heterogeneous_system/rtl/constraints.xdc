@@ -14,10 +14,7 @@ set_property -dict { PACKAGE_PIN E3   IOSTANDARD LVCMOS33 } [get_ports clk_100MH
 set_property -dict { PACKAGE_PIN T18  IOSTANDARD LVCMOS33 } [get_ports rst]
 
 
-## USB-UART - PMOD JA
-##   JA1 (B13) = rx  - connect PMOD TX here
-##   JA2 (F14) = tx  - connect PMOD RX here
-##   bottom row GND/VCC for power
+## USB-UART - PROG-USB-UART bridge
 
 set_property -dict { PACKAGE_PIN C4  IOSTANDARD LVCMOS33 } [get_ports rx]
 set_property -dict { PACKAGE_PIN D4  IOSTANDARD LVCMOS33 } [get_ports tx]

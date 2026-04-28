@@ -1,3 +1,6 @@
+// Baud Generator for UART Transmission
+// Generates a tick at the desired baud rate by counting clock cycles of the input clock.
+
 module baud_generator
     #(              // 115200 baud
         parameter   N = 5,     // number of counter bits

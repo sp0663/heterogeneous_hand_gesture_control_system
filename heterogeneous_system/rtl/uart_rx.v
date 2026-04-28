@@ -1,3 +1,5 @@
+// UART Receiver Module
+
 module uart_rx 
 #( parameter DBITS = 8,
              SB_TICK= 16 //stop bit

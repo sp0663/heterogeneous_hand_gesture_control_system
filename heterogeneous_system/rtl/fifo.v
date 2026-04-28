@@ -77,7 +77,7 @@ module fifo
 						empty_buff = 1'b1;
 				end
 			
-			2'b10:	// write button pressed?
+			2'b10:	// write button pressed
 				if(~fifo_full) begin	// FIFO not full
 					current_write_addr_buff = next_write_addr;
 					empty_buff = 1'b0;  // after write, FIFO not empty anymore
